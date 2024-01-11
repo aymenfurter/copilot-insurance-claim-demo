@@ -1,4 +1,4 @@
-package com.microsoft.openai.samples.insurancedemo;
+package com.microsoft.openai.samples.insurancedemo.model;
 
 public record CoverageDetails(boolean comprehensive, boolean parkingDamageInsurance) {
 }

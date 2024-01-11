@@ -1,7 +1,12 @@
-package com.microsoft.openai.samples.insurancedemo;
+package com.microsoft.openai.samples.insurancedemo.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.microsoft.openai.samples.insurancedemo.model.CoverageDetails;
+import com.microsoft.openai.samples.insurancedemo.model.InsurancePolicy;
+import com.microsoft.openai.samples.insurancedemo.model.Vehicle;
+
 import java.util.Arrays;
 import java.util.List;
 

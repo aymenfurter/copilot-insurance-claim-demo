@@ -1,19 +1,21 @@
-package com.microsoft.openai.samples.insurancedemo;
+package com.microsoft.openai.samples.insurancedemo.model;
 
 public class InsuranceResponse {
     private String replyText;
     private DamageType damageType;
     private CarInsuranceType carInsuranceType;
     private String carModel;
+    private String carMake;
     private String licensePlateNumber;
     private CostCategory estimatedCostCategory;
     private String situationExplanation;
 
-    public InsuranceResponse(String replyText, DamageType damageType, CarInsuranceType carInsuranceType, String carModel, String licensePlateNumber, CostCategory estimatedCostCategory, String situationExplanation) {
+    public InsuranceResponse(String replyText, DamageType damageType, CarInsuranceType carInsuranceType, String carMake, String carModel, String licensePlateNumber, CostCategory estimatedCostCategory, String situationExplanation) {
         this.replyText = replyText;
         this.damageType = damageType;
         this.carInsuranceType = carInsuranceType;
         this.carModel = carModel;
+        this.carMake = carMake;
         this.licensePlateNumber = licensePlateNumber;
         this.estimatedCostCategory = estimatedCostCategory;
         this.situationExplanation = situationExplanation;
@@ -33,6 +35,14 @@ public class InsuranceResponse {
 
     public void setCarInsuranceType(CarInsuranceType carInsuranceType) {
         this.carInsuranceType = carInsuranceType;
+    }
+
+    public String getCarMake() {
+        return carMake;
+    }
+
+    public void setCarMake(String carBrand) {
+        this.carMake = carBrand;
     }
 
     public String getCarModel() {
@@ -74,23 +84,4 @@ public class InsuranceResponse {
     public void setReplyText(String replyText) {
         this.replyText = replyText;
     }
-}
-
-enum DamageType {
-    CAR_INSURANCE,
-    HOUSEHOLDER_INSURANCE,
-    OTHER
-}
-
-enum CarInsuranceType {
-    THEFT,
-    PARKING_DAMAGE,
-    BROKEN_GLASS,
-    OTHER
-}
-
-enum CostCategory {
-    MINOR,
-    MEDIUM,
-    SEVERE
 }
