@@ -1,26 +1,24 @@
-package com.microsoft.openai.samples.insurancedemo.controller;
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+package com.microsoft.openai.samples.insurancedemo.service;
 
 import com.microsoft.openai.samples.insurancedemo.model.CoverageDetails;
 import com.microsoft.openai.samples.insurancedemo.model.InsurancePolicy;
 import com.microsoft.openai.samples.insurancedemo.model.Vehicle;
+import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
-@RestController
-public class InsuranceController {
+@Service
+public class InsurancePolicyService {
 
     private List<InsurancePolicy> insurancePolicies = Arrays.asList(
         createPolicy("12345", "67890", "Toyota", "Corolla", "Blue", 2020, "CH-041975", true, true),
-        createPolicy("12346", "67891", "Toyota", "Camry", "Red", 2019, "CH-041976", true, false),
-        createPolicy("12347", "67892", "Honda", "Civic", "Black", 2018, "CH-041977", false, true)
+        createPolicy("12346", "67890", "Toyota", "Camry", "Red", 2019, "CH-041976", true, false),
+        createPolicy("12347", "67890", "Honda", "Civic", "Black", 2018, "CH-041977", false, true)
     );
 
-    @GetMapping("/api/insurance-policies")
-    public List<InsurancePolicy> getInsurancePolicies() {
+    public List<InsurancePolicy> getAllInsurancePolicies() {
         return insurancePolicies;
     }
 

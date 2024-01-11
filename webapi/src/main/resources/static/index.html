@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Claim Filing App</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Insurance Claim Form</h1>
+        <form id="claimForm">
+            <!-- File Upload -->
+            <label for="fileUpload" class="emoji-button">✨</label>
+            <input type="file" id="fileUpload" name="file" hidden>
+
+            <!-- Text Inputs for API Response -->
+            <input type="text" id="replyText" name="replyText" placeholder="Reply Text" disabled>
+            <input type="text" id="carModel" name="carModel" placeholder="Car Model" disabled>
+            <input type="text" id="carMake" name="carMake" placeholder="Car Make" disabled>
+            <input type="text" id="licensePlateNumber" name="licensePlateNumber" placeholder="License Plate Number" disabled>
+            <input type="text" id="situationExplanation" name="situationExplanation" placeholder="Situation Explanation" disabled>
+
+            <!-- Dropdown for Damage Type -->
+            <select id="damageType" name="damageType" disabled>
+                <option value="CAR_INSURANCE">Car Insurance</option>
+                <option value="HOUSEHOLDER_INSURANCE">Householder Insurance</option>
+                <option value="OTHER">Other</option>
+            </select>
+
+            <!-- Dropdown for Car Insurance Type -->
+            <select id="carInsuranceType" name="carInsuranceType" disabled>
+                <option value="THEFT">Theft</option>
+                <option value="PARKING_DAMAGE">Parking Damage</option>
+                <option value="BROKEN_GLASS">Broken Glass</option>
+                <option value="OTHER">Other</option>
+            </select>
+
+            <!-- Dropdown for Cost Category -->
+            <select id="estimatedCostCategory" name="estimatedCostCategory" disabled>
+                <option value="MINOR">Minor</option>
+                <option value="MEDIUM">Medium</option>
+                <option value="SEVERE">Severe</option>
+            </select>
+
+            <!-- Buttons -->
+            <button type="submit">File Claim</button>
+            <button type="reset" class="reset-button">Reset</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>

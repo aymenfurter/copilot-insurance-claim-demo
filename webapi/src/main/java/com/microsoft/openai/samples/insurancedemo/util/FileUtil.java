@@ -9,12 +9,6 @@ import java.nio.file.Files;
 import java.util.Base64;
 
 public class FileUtil {
-    public static String readFileAsBase64(String path) throws IOException {
-        File file = ResourceUtils.getFile("classpath:" + path);
-        byte[] fileContent = Files.readAllBytes(file.toPath());
-        return "data:image/png;base64," + Base64.getEncoder().encodeToString(fileContent);
-    }
-    
     public static String convertMultiPartToFileBase64(MultipartFile file) throws IOException {
         if (file == null || file.isEmpty()) {
             throw new IllegalArgumentException("The file cannot be null or empty.");
