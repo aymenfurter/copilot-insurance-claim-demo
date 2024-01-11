@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('claimForm');
     const fileInput = document.getElementById('fileUpload');
+    const replyTextContainer = document.getElementById('replyTextContainer');
     const submitButton = form.querySelector('button[type="submit"]');
     const resetButton = form.querySelector('button[type="reset"]');
     const loader = document.createElement('div');
@@ -35,13 +36,15 @@ function handleSubmitFile(file) {
         body: formData
     })
     .then(response => response.json())
-    .then(data => populateForm(data))
+    .then(data => {
+        populateForm(data);
+        displayReplyText(data.replyText);
+    })
     .catch(error => console.error('Error:', error))
     .finally(() => toggleLoader(false));
 }
 
 function populateForm(data) {
-    document.getElementById('replyText').value = data.replyText || '';
     document.getElementById('carModel').value = data.carModel || '';
     document.getElementById('carMake').value = data.carMake || '';
     document.getElementById('licensePlateNumber').value = data.licensePlateNumber || '';
@@ -50,12 +53,24 @@ function populateForm(data) {
     document.getElementById('carInsuranceType').value = data.carInsuranceType || '';
     document.getElementById('estimatedCostCategory').value = data.estimatedCostCategory || '';
 
-    // Enable form fields
     enableFormFields();
 }
 
+function displayReplyText(text) {
+    const replyText = document.getElementById('replyText');
+    const replyTextContainer = document.getElementById('replyTextContainer');
+    replyText.textContent = text;
+
+    if (text) {
+        replyTextContainer.style.opacity = '1';
+    } else {
+        replyTextContainer.style.opacity = '0';
+    }
+}
+
+
 function enableFormFields() {
-    const fields = document.querySelectorAll('#claimForm input, #claimForm select');
+    const fields = document.querySelectorAll('#claimForm input, #claimForm select, #claimForm textarea');
     fields.forEach(field => field.disabled = false);
 }
 
@@ -63,10 +78,12 @@ function resetForm() {
     const form = document.getElementById('claimForm');
     form.reset();
     enableFormFields();
+    document.getElementById('replyText').textContent = '';
 }
 
 function submitClaim() {
     console.log('Claim submitted');
+    // Implement actual submission logic here
 }
 
 function toggleLoader(show) {
