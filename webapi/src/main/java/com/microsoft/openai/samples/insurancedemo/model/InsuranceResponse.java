@@ -19,7 +19,9 @@ public class InsuranceResponse {
         this.licensePlateNumber = licensePlateNumber;
         this.estimatedCostCategory = estimatedCostCategory;
         this.situationExplanation = situationExplanation;
+
     }
+ 
 
     public DamageType getDamageType() {
         return damageType;

@@ -17,13 +17,20 @@ import com.microsoft.semantickernel.planner.stepwiseplanner.DefaultStepwisePlann
 import com.microsoft.semantickernel.planner.stepwiseplanner.StepwisePlanner;
 import com.microsoft.semantickernel.textcompletion.TextCompletion;
 
+import org.apache.commons.imaging.Imaging;
+import org.apache.commons.imaging.common.GenericImageMetadata;
+import org.apache.commons.imaging.common.ImageMetadata;
+import org.apache.commons.imaging.common.ImageMetadata.ImageMetadataItem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Set;
 
 

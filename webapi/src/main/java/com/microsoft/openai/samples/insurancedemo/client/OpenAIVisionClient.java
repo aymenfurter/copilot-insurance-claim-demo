@@ -8,6 +8,8 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -15,6 +17,8 @@ import java.io.IOException;
 //FIXME: Move to SK/Azure OpenAI SDK once supported
 @Component
 public class OpenAIVisionClient {
+    private static final Logger LOGGER = LoggerFactory.getLogger(OpenAIVisionClient.class);
+    
     private String apiKey = System.getenv("AZURE_OPEN_AI_KEY");
     private static final String API_ENDPOINT = System.getenv("AZURE_OPEN_AI_ENDPOINT") + "openai/deployments/vision/chat/completions?api-version=2023-07-01-preview";
     private static final String prompt = "1. What kind of damage is this? (CAR_INSURANCE, HOUSE_INSURANCE, PET_INSURANCE, OTHER)" +
@@ -26,6 +30,12 @@ public class OpenAIVisionClient {
                             "7. Explain the situation in the picture";
 
     public VisionResponse sendVisionRequest(String base64Image) throws IOException {
+        LOGGER.info("====================");
+        LOGGER.info("Sending request to OpenAI Vision API");
+        LOGGER.info("Query: {}", prompt);
+        LOGGER.info("Image: {}", base64Image.substring(0, 30) + "....");
+        LOGGER.info("====================");
+
         String payload = buildPayload(prompt, base64Image);
 
         try (CloseableHttpClient client = HttpClients.createDefault()) {
@@ -41,6 +51,10 @@ public class OpenAIVisionClient {
                     throw new RuntimeException("Failed: HTTP error code : " + response.getStatusLine().getStatusCode());
                 }
 
+                LOGGER.info("====================");
+                LOGGER.info("Response from OpenAI Vision API");
+                LOGGER.info("Response: {}", output);
+                LOGGER.info("====================");
                 return new VisionResponse(extractResponse(output));
             }
         }

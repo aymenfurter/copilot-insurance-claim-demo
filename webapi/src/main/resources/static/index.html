@@ -4,29 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insurance Claim Filing App</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Contoso Insurance - Claims</h1>
         <form id="claimForm">
-            <!-- File Upload -->
-            <label for="fileUpload" class="emoji-button">✨ <span class="button-text">Upload a picture to file your claim</span></label>
+            <div class="intelligent-app-toggle">
+                <label for="intelligentApp">Intelligent App:</label>
+                <input type="checkbox" id="intelligentApp" name="intelligentApp">
+            </div>
+
+
+            <label for="fileUpload" class="emoji-button" id="emoji-button">✨ <span class="button-text">Upload a picture to file your claim</span></label>
             <input type="file" id="fileUpload" name="file" hidden>
 
-            <!-- Chat-like Experience for Reply -->
+            <div id="imagePreviewContainer" style="display: none;">
+                <img id="imagePreview" src="" alt="Uploaded Image" style="max-width: 100%; height: auto;"/>
+            </div>
             <div id="replyTextContainer" class="chat-bubble">
                 <span class="emoji-lion" role="img" aria-label="lion">🦁</span>
                 <p id="replyText"></p>
             </div>
+            
+            <div class="intelligent-app-confirm" id="intelligent-app-confirm">
+                <p>Would you like to raise a claim?</p>
+                <button type="button" id="confirmButton" onClick="toggleFormFieldsVisibility(true)">Yes</button>
+                <button type="button" id="backButton" class="back" onClick="location.href = '/'">Go back</button>
+            </div>
 
-            <!-- Text Inputs and TextArea for API Response -->
+            <input type="text" id="claimDate" name="claimDate" placeholder="Date" >
             <input type="text" id="carModel" name="carModel" placeholder="Car Model" >
             <input type="text" id="carMake" name="carMake" placeholder="Car Make" >
+
             <input type="text" id="licensePlateNumber" name="licensePlateNumber" placeholder="License Plate Number" >
             <textarea id="situationExplanation" name="situationExplanation" placeholder="Situation Explanation" ></textarea>
 
-            <!-- Dropdowns for API Response -->
             <select id="damageType" name="damageType" >
                 <option value="">Please select</option>
                 <option value="CAR_INSURANCE">Car Insurance</option>

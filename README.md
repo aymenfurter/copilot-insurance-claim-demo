@@ -1,1 +1,0 @@
-# copilot-insurance-claim-demo

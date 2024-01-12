@@ -82,6 +82,12 @@
             <artifactId>httpclient</artifactId>
             <version>4.5.13</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-imaging</artifactId>
+            <version>1.0-alpha2</version>
+        </dependency>
+
         <!-- Spring Boot Test Starter (for testing) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
