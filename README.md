@@ -1,7 +1,7 @@
-# Insurance Claim Filing with AI Integration
+# Insurance Claim Filing with AI 
 
 <img style="border-radius: 10px;" src="https://github.com/aymenfurter/copilot-insurance-claim-demo/blob/main/sceenshot.png">
-This repository demonstrates an innovative approach to filing insurance claims, combining traditional methods with an "intelligent app" version. The intelligent app leverages GPT-4 Vision for initial claim analysis, followed by processing requests through the Semantic Kernel's planning capabilities. It aims to streamline the process of determining coverage eligibility for insurance claims.
+This repository demonstrates a new approach to filing insurance claims, combining traditional methods with an "intelligent app" version. The intelligent app leverages GPT-4 Vision for initial claim analysis, followed by processing requests through the Semantic Kernel's planning capabilities. 
 
 ## Features
 - **Traditional Claim Filing**: A standard, straightforward method for users to file their insurance claims.
