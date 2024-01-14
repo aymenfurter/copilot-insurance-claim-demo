@@ -13,9 +13,9 @@ import java.util.stream.Collectors;
 public class InsurancePolicyService {
 
     private List<InsurancePolicy> insurancePolicies = Arrays.asList(
-        createPolicy("A987544", "67890", "Toyota", "Corolla", "Blue", 2020, "ZH-041975", true, true),
-        createPolicy("B384834", "67890", "Toyota", "Camry", "Red", 2019, "ZH-563956", true, false),
-        createPolicy("C84H229", "67890", "Honda", "Civic", "Black", 2018, "AG-153577", false, true)
+        createPolicy("A987544", "67890", "Toyota", "Corolla", "Blue", 2020, "ZH 041975", true, false),
+        createPolicy("B384834", "67890", "Toyota", "Camry", "Blue", 1995, "ZH 865506", true, true),
+        createPolicy("C84H229", "67890", "Honda", "Civic", "Black", 2018, "AG 153577", false, true)
     );
 
     public List<InsurancePolicy> getAllInsurancePolicies() {

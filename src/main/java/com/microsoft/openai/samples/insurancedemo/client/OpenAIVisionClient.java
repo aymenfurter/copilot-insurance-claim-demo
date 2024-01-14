@@ -86,7 +86,8 @@ public class OpenAIVisionClient {
                 + "        ]"
                 + "    }"
                 + "],"
-                + "\"max_tokens\": 300"
+                + "\"max_tokens\": 300,"
+                + "\"temperature\": 0"
                 + "}";
     }
 }
