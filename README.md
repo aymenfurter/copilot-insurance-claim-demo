@@ -8,7 +8,7 @@ The application offers two distinct methods for filing insurance claims:
 - **Traditional Claim Filing**: A standard, user-friendly way to submit insurance claims.
 - **Intelligent App**: An advanced option that employs GPT-4 Vision for analyzing claim details and Semantic Kernel for policy coverage decisions.
 
-<img src="screenshot.png?raw=true" width="350px">
+<img src="demo.gif?raw=true" width="350px">
 
 ## Prerequisites 
 To deploy this application, please ensure you have the following dependencies installed:
