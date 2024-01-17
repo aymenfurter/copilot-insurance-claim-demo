@@ -1,4 +1,4 @@
-# Can AI Simplify Insurance Claim Filing?
+# How a Picture of Car Damage Can File Your Insurance Claim
 <img src="architecture-overview.png?raw=true" width="900px">
 
 This repository demonstrates an innovative approach to insurance claim processing. It combines traditional methods with an advanced "intelligent app" that utilizes GPT-4 Vision for initial claim analysis and Semantic Kernel for processing requests.
