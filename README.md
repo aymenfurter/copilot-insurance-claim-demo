@@ -7,7 +7,7 @@ This initial step uses GPT-4 Turbo with Vision to analyze images submitted for i
 - [View OpenAIVisionClient Java Class](https://github.com/aymenfurter/copilot-insurance-claim-demo/blob/main/src/main/java/com/microsoft/openai/samples/insurancedemo/client/OpenAIVisionClient.java)
 
 ## 2. Insurance Coverage Determination
-In this phase, semantic kernel is tasked with verifying whether the specific car insurance policy covers the identified damage. It involves initializing the OpenAI client and the kernel, then directing the kernel to utilize the `InsurancePolicyPlugin`. The goal is to find the relevant insurance policy and confirm coverage for the particular incident. This crucial step directly addresses whether the insurance policy covers the reported incident.
+In this phase, the semantic kernel is tasked with verifying whether the specific car insurance policy covers the identified damage. Utilizing the [Stepwise Planner](https://devblogs.microsoft.com/semantic-kernel/semantic-kernel-planners-stepwise-planner/), we can direct the kernel to utilize the `InsurancePolicyPlugin`. The goal is to find the relevant insurance policy and confirm coverage for the particular incident. This crucial step directly addresses whether the insurance policy covers the reported incident.
 ```
 String ENDPOINT = System.getenv("AZURE_OPEN_AI_ENDPOINT");
 String API_KEY = System.getenv("AZURE_OPEN_AI_KEY");
