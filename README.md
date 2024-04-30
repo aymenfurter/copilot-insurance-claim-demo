@@ -11,6 +11,7 @@ In this phase, the semantic kernel is tasked with verifying whether the specific
 ```
 String ENDPOINT = System.getenv("AZURE_OPEN_AI_ENDPOINT");
 String API_KEY = System.getenv("AZURE_OPEN_AI_KEY");
+String DEPLOYMENT_NAME = System.getenv("GPT4_DEPLOYMENT_NAME");
 
 OpenAIAsyncClient client = new OpenAIClientBuilder()
 .endpoint(ENDPOINT)
@@ -20,7 +21,7 @@ OpenAIAsyncClient client = new OpenAIClientBuilder()
 Kernel kernel = SKBuilders.kernel()
 .withDefaultAIService(SKBuilders.chatCompletion()
 .withOpenAIClient(client)
-.withModelId("gpt-4-32k")
+.withModelId(DEPLOYMENT_NAME)
 .build())
 .build();
 
@@ -71,6 +72,8 @@ To deploy this application, please ensure you have the following dependencies in
 4. Before starting the application, set the endpoint and key:
     - `export AZURE_OPEN_AI_ENDPOINT=https://<instance-name>.openai.azure.com/`
     - `export AZURE_OPEN_AI_KEY=<your-key>`
+    - `export GPT4_VISION_DEPLOYMENT_NAME=<your-gpt4-vision-deployment-name>`
+    - `export GPT4_DEPLOYMENT_NAME=<your-gpt4-deployment-name>`
 5. Start the application with `java -jar target/appname.jar` and access it via `http://localhost:8080`.
 
 ## Future Improvements
