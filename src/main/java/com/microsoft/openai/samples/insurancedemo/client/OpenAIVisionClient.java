@@ -20,7 +20,7 @@ public class OpenAIVisionClient {
     private static final Logger LOGGER = LoggerFactory.getLogger(OpenAIVisionClient.class);
     
     private String apiKey = System.getenv("AZURE_OPEN_AI_KEY");
-    private static final String API_ENDPOINT = System.getenv("AZURE_OPEN_AI_ENDPOINT") + "openai/deployments/vision/chat/completions?api-version=2023-07-01-preview";
+    private static final String API_ENDPOINT = System.getenv("AZURE_OPEN_AI_ENDPOINT") + "openai/deployments/" + System.getenv("GPT4_VISION_DEPLOYMENT_NAME") + "/chat/completions?api-version=2023-07-01-preview";
     private static final String prompt = "1. What kind of damage is this? (CAR_INSURANCE, HOUSE_INSURANCE, PET_INSURANCE, OTHER)" +
                             "2. What kind of car damage is it? (PARKING_DAMAGE, THIEF, BROKEN GLASS, OTHER)" +
                             "3. What is the car make?" +

@@ -81,6 +81,7 @@ public class ImageAnalysisService {
     public String replyText(String responseText) {
         String ENDPOINT = System.getenv("AZURE_OPEN_AI_ENDPOINT");
         String API_KEY = System.getenv("AZURE_OPEN_AI_KEY");
+        String DEPLOYMENT_NAME = System.getenv("GPT4_DEPLOYMENT_NAME");
 
         OpenAIAsyncClient client = new OpenAIClientBuilder()
                 .endpoint(ENDPOINT)
@@ -89,7 +90,7 @@ public class ImageAnalysisService {
 
         TextCompletion chatCompletion = SKBuilders.chatCompletion()
                 .withOpenAIClient(client)
-                .withModelId("gpt-4-32k")
+                .withModelId(DEPLOYMENT_NAME)
                 .build();
 
         Kernel kernel = SKBuilders.kernel()
